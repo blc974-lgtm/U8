@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Société Mère | Centre de Contrôle du Groupe</title>
+    <style>
+        :root {
+            --primary: #a855f7; /* Violet Royal pour la Société Mère */
+            --accent: #22c55e;  /* Vert pour le statut actif */
+            --bg-dark: #090d16;
+            --card-bg: #111827;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        /* Arrière-plan technologique */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(rgba(168, 85, 247, 0.15) 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 850px;
+            width: 100%;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 24px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Grille des Filiales et de la Structure */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Arborescence en console */
+        .tree-box {
+            background: #040711;
+            padding: 1.5rem;
+            border-radius: 12px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #c084fc;
+            border-left: 4px solid var(--primary);
+            margin-bottom: 2.5rem;
+        }
+
+        .tree-line span { color: var(--text-main); margin-left: 0.5rem; }
+
+        /* Pied de page et Statut Global */
+        .footer-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(34, 197, 94, 0.1);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .pulse {
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--accent);
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink { 0%, 100% { opacity: 0.4; } 50% { opacity: 1; } }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <div class="icon">👑</div>
+            <h1>Société Mère</h1>
+            <p class="subtitle">Siège social virtuel & Centre névralgique du groupe d'entreprises</p>
+        </div>
+
+        <!-- Organisation en Arborescence (Console) -->
+        <div class="tree-box">
+            <div class="tree-line">🏢 [HOLDING_ROOT] <span>(Actionnariat & Stratégie Majoritaire)</span></div>
+            <div class="tree-line">├── 📁 Tech_Sub/ <span>(Filiale Tech - Votre Kali WSL / Registre Docker)</span></div>
+            <div class="tree-line">├── 📁 Marketing_Sub/ <span>(Filiale Croissance & Landing Pages)</span></div>
+            <div class="tree-line">└── ⚙️ global_governance.conf</div>
+        </div>
+
+        <!-- Les Piliers du Hub -->
+        <div class="grid">
+            <div class="card">
+                <h3>⚖️ Gouvernance</h3>
+                <p>Détention des actifs stratégiques, contrôle majoritaire et gestion des variables d'environnement globales du groupe.</p>
+            </div>
+            <div class="card">
+                <h3>📦 Infrastructures</h3>
+                <p>Supervision des registres d'images d'entreprise privés et distribution sécurisée des services aux filiales.</p>
+            </div>
+        </div>
+
+        <!-- Pied de page dynamique -->
+        <div class="footer-status">
+            <span id="date-display" style="color: var(--text-muted);"></span>
+            <div class="badge">
+                <div class="pulse"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script de gestion de la structure corporative -->
+    <script>
+        // Injection dynamique de la date de session de la Holding
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        document.getElementById('date-display').innerText = "Session Holding ouverte : " + new Date().toLocaleDateString('fr-FR', options);
+    </script>
+
+</body>
+</html>
